@@ -5,8 +5,6 @@
  */
 package PersistenceLayer;
 
-import java.util.Date;
-
 /**
  *
  * @author Grupo Uno 
