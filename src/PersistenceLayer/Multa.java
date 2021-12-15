@@ -10,16 +10,18 @@ import java.util.Date;
 /**
  *
  * @author Grupo Uno 
+ * @members -> @edgarguamo @Jorgeflowers18 @vysery98
+ * 
 */
 public class Multa {
     public int id;
     public String date,hour, captura, infraccion, placas, propietario, cedula
             , speed_limit, speed_catch, modelo, color;
     
-    public Multa(int id, String date,String hour,String captura, 
+    public Multa(int info, String date,String hour,String captura, 
             String infraccion, String placas, String propietario, String cedula,
             String speed_limit, String speed_catch, String modelo, String color){
-        this.id = id;
+        this.id = info;
         this.date = date;
         this.hour = hour;
         this.captura = captura;
@@ -31,10 +33,6 @@ public class Multa {
         this.speed_catch = speed_catch;
         this.modelo = modelo;
         this.color = color;
-    }
-    
-    public Multa (){
-        
     }
    
     public void setId(int id){

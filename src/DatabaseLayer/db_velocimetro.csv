@@ -1,11 +1,11 @@
-﻿id,date,Hour,captura ,infraccion,Placas ,propietario,Cedula,speed limit,speed catch,marca,modelo,color
-1,10/12/2021,12:25:12 PM,blob,Exceso de veloocidad,AAC-337,Miguel Gutierrez,1101254685,70 km/h,140 km/h,Kia,Cerato,Azul
-2,10/12/2021,8:17:32 PM,blob,Exceso de veloocidad,MCB-245,Olger Cabrera,1702545825,70 km/h,100 km/h,Mazda,Mazda 6,Cromado
-3,12/12/2021,6:21:00 PM,blob,Exceso de veloocidad,PBB-3239,Santiago Fernandez,2125255635,70 km/h,90 km/h,Honda,Pilot,Dorado
-4,12/12/2021,11:12:55 PM,blob,Exceso de veloocidad,AAA-0003,Miguel Quezada,1422516877,70 km/h,135 km/h,Toyota,Hilux 2017,Plateado
-5,14/12/2021,1:50:00 PM,blob,Exceso de veloocidad,Lol-2102,Carlos Santana,1104252535,70 km/h,120 km/h,chevrolet,camioneta,Negro
-6,14/12/2021,2:50:00 PM,blob,Exceso de veloocidad,AXC-1234,Pipo Gambino,1572195603,70 km/h,111km/h,Mazda,Mazda 2,Rojo
-7,15/12/2021,3:50:00 PM,blob,Exceso de veloocidad,PDN-7569,Alex Sotomayor,1869792135,70 km/h,120 km/h,Suzuki,Vitara,Cromado
-8,15/12/2021,4:50:00 PM,blob,Exceso de veloocidad,DPL-990,Alvaro Jimenez,1255846628,70 km/h,85 km/h,Hyundai,Tucsonn,Azul
-9,17/12/2021,12:25:12 AM,blob,Exceso de veloocidad,MCB-250,Andrea Cabrera,1356254698,70 km/h,75 km/h,Honda,CR-V,Blanco
-10,17/12/2021,6:14:01 AM,blob,Exceso de veloocidad,PDK-5894,Antonio Guzman,2079542354,70 km/h,123 km/h,Kia,Seltos,Cromado
+﻿id,date,Hour,captura,infraccion,Placas,propietario,Cedula,speed_limit(km/h),speed_catch(km/h),modelo,color
+1,10/12/2021,12:25:12 PM,blob,Exceso de velocidad,AAC-337,Miguel Gutierrez,1101254685,70,140,Cerato,Azul
+2,10/12/2021,8:17:32 PM,blob,Exceso de velocidad,MCB-245,Olger Cabrera,1702545825,70,100,Mazda 6,Cromado
+3,12/12/2021,6:21:00 PM,blob,Exceso de velocidad,PBB-3239,Santiago Fernandez,2125255635,70,90,Pilot,Dorado
+4,12/12/2021,11:12:55 PM,blob,Exceso de velocidad,AAA-0003,Miguel Quezada,1422516877,70,135,Hilux 2017,Plateado
+5,14/12/2021,1:50:00 PM,blob,Exceso de velocidad,Lol-2102,Carlos Santana,1104252535,70,120,camioneta,Negro
+6,14/12/2021,2:50:00 PM,blob,Exceso de velocidad,AXC-1234,Pipo Gambino,1572195603,70,111km/h,Mazda 2,Rojo
+7,15/12/2021,3:50:00 PM,blob,Exceso de velocidad,PDN-7569,Alex Sotomayor,1869792135,70,120,Vitara,Cromado
+8,15/12/2021,4:50:00 PM,blob,Exceso de velocidad,DPL-990,Alvaro Jimenez,1255846628,70,85,Tucsonn,Azul
+9,17/12/2021,12:25:12 AM,blob,Exceso de velocidad,MCB-250,Andrea Cabrera,1356254698,70,75,CR-V,Blanco
+10,17/12/2021,6:14:01 AM,blob,Exceso de velocidad,PDK-5894,Antonio Guzman,2079542354,70,123,Seltos,Cromado
