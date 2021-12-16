@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 import PersistenceLayer.Multa;
 
-public class Controlador {
+public class ReadProcess {
 
     public static void main(String[] args) {
-        String ruta = "/home/castle/Desktop/taller1_ADS/src/DatabaseLayer/dataVelocimetro.csv";
+        String ruta = "C:\\Users\\wow80\\Documents\\NetBeansProjects\\taller1_ADS\\src\\DatabaseLayer\\dataVelocimetro.csv";
         String line;
         ArrayList<Multa> data = new ArrayList<Multa>();
         // Creación de objeto tipo Multa
@@ -26,9 +26,12 @@ public class Controlador {
                     distribucion[9], distribucion[10], distribucion[11]);
                 // Ingreso de objetos a Array
                 data.add(radar);
+                // System.out.println(data);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+        
     }
 }
