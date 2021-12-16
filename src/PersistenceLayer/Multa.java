@@ -11,10 +11,10 @@ package PersistenceLayer;
  * @members -> @edgarguamo @Jorgeflowers18 @vysery98
  * 
 */
-public class Multa {
+public class Multa implements Comparable<Multa> {
     public int id;
-    public String date,hour, captura, infraccion, placas, propietario, cedula
-            , speed_limit, speed_catch, modelo, color;
+    public String date, hour, captura, infraccion, placas, propietario, cedula,
+        speed_limit, speed_catch, modelo, color;
     
     public Multa(int info, String date,String hour,String captura, 
             String infraccion, String placas, String propietario, String cedula,
@@ -81,4 +81,104 @@ public class Multa {
         this.color = color;
     } 
     
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @return the hour
+     */
+    public String getHour() {
+        return hour;
+    }
+
+    /**
+     * @return the captura
+     */
+    public String getCaptura() {
+        return captura;
+    }
+
+    /**
+     * @return the infraccion
+     */
+    public String getInfraccion() {
+        return infraccion;
+    }
+
+    /**
+     * @return the placas
+     */
+    public String getPlacas() {
+        return placas;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public String getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @return the cedula
+     */
+    public String getCedula() {
+        return cedula;
+    }
+
+    /**
+     * @return the speed_limit
+     */
+    public String getSpeedLimit() {
+        return speed_limit;
+    }
+
+    /**
+     * @return the speed_catch
+     */
+    public String getSpeedCatch() {
+        return speed_catch;
+    }
+
+    /**
+     * @return the modelo
+     */
+    public String getModelo() {
+        return modelo;
+    }
+
+    /**
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString(){
+        return "Multa [id: "+ getId() + "\nhour: "+getHour()+"\ncaptura: " + 
+                getCaptura()+"\ninfraccion: " + getInfraccion()+ "\nplacas: " 
+                + getPlacas()+"\npropietario" + getPropietario()+ "\ncedula: "
+                +getCedula() +"\nspeed limit: "+getSpeedLimit()+"\nSpeed Catch: " 
+                + getSpeedCatch()+"\ncedula: "+getCedula()+ "\nmodelo: "
+                +getModelo()+"\nColor:"+getColor()+"]\n" ;
+    }
+
+    @Override
+    public int compareTo(Multa other) {
+        int compareSpeedCatch = this.getSpeedCatch().compareTo(other.getSpeedCatch());
+        
+        return compareSpeedCatch;
+    }
 }
