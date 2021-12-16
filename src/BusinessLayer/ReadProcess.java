@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import PersistenceLayer.Multa;
 
@@ -31,7 +32,19 @@ public class ReadProcess {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-        
+
+
+        /*
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println(data.get(i).toString());    
+        }
+        */
+
+        Collections.sort(data);
+
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println(data.get(i).toString());    
+        }
+
     }
 }
