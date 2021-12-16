@@ -12,13 +12,14 @@ package PersistenceLayer;
  * 
 */
 public class Multa implements Comparable<Multa> {
+    public Integer speed_catch, speed_limit;
     public int id;
     public String date, hour, captura, infraccion, placas, propietario, cedula,
-        speed_limit, speed_catch, modelo, color;
+        modelo, color;
     
     public Multa(int info, String date,String hour,String captura, 
             String infraccion, String placas, String propietario, String cedula,
-            String speed_limit, String speed_catch, String modelo, String color){
+            Integer speed_limit, Integer speed_catch, String modelo, String color){
         this.id = info;
         this.date = date;
         this.hour = hour;
@@ -65,11 +66,11 @@ public class Multa implements Comparable<Multa> {
         this.cedula = cedula;
     }
     
-    public void setSpeed_limit( String speed_limit ){
+    public void setSpeed_limit( Integer speed_limit ){
         this.speed_limit = speed_limit;
     }
     
-    public void setSpeed_catch( String speed_catch ){
+    public void setSpeed_catch( Integer speed_catch ){
         this.speed_catch = speed_catch;
     }
     
@@ -140,14 +141,14 @@ public class Multa implements Comparable<Multa> {
     /**
      * @return the speed_limit
      */
-    public String getSpeedLimit() {
+    public Integer getSpeedLimit() {
         return speed_limit;
     }
 
     /**
      * @return the speed_catch
      */
-    public String getSpeedCatch() {
+    public Integer getSpeedCatch() {
         return speed_catch;
     }
 
@@ -178,7 +179,6 @@ public class Multa implements Comparable<Multa> {
     @Override
     public int compareTo(Multa other) {
         int compareSpeedCatch = this.getSpeedCatch().compareTo(other.getSpeedCatch());
-        
         return compareSpeedCatch;
     }
 }
