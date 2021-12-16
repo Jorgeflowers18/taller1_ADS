@@ -173,7 +173,7 @@ public class Multa implements Comparable<Multa> {
                 + getPlacas()+"\npropietario" + getPropietario()+ "\ncedula: "
                 +getCedula() +"\nspeed limit: "+getSpeedLimit()+"\nSpeed Catch: " 
                 + getSpeedCatch()+"\ncedula: "+getCedula()+ "\nmodelo: "
-                +getModelo()+"\nColor:"+getColor()+"]\n" ;
+                +getModelo()+"\nColor:"+getColor()+"]\n\n\n\n" ;
     }
 
     @Override
