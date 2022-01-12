@@ -7,13 +7,12 @@ package PresentationLayer;
 
 import BusinessLayer.*;
 
-
 /**
  *
  * @author wow80
  */
 public class Sys_GUI extends javax.swing.JFrame {
-    
+
     public String item_selected;
 
     /**
@@ -40,21 +39,24 @@ public class Sys_GUI extends javax.swing.JFrame {
         exit_btn = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         output_txt = new javax.swing.JTextPane();
+        resumenComboBox = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        presentarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(650, 400));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel1.setText("Sistema de Multas de Tránsito");
+        jLabel1.setFont(new java.awt.Font("MS Gothic", 1, 36)); // NOI18N
+        jLabel1.setText("Sistema de Multas - ANT");
 
-        query_btn.setText("Consultar");
+        query_btn.setText("Ordenar");
         query_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 query_btnActionPerformed(evt);
             }
         });
 
-        combo_filter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Velocidad Superada", "Límite Permitido", "Número de Infracción", "Fecha", "Hora", "Cédula", "Color", "Modelo" }));
+        combo_filter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Velocidad Superada", "Límite Permitido", "Número de Infracción", "Fecha" }));
         combo_filter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 combo_filterActionPerformed(evt);
@@ -62,7 +64,7 @@ public class Sys_GUI extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic", 0, 12)); // NOI18N
-        jLabel3.setText("Filtrar por:");
+        jLabel3.setText("Ordenar por:");
 
         help_btn.setText("Ayuda");
         help_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -80,57 +82,83 @@ public class Sys_GUI extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(output_txt);
 
+        resumenComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Modelo", "Tipo de Multa" }));
+        resumenComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resumenComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Generar resumen:");
+
+        presentarBtn.setText("Presentar");
+        presentarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                presentarBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(combo_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(combo_filter, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(resumenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(query_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(presentarBtn))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(79, 79, 79)
+                                .addComponent(help_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(exit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(69, 69, 69)))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(query_btn)
-                        .addGap(179, 179, 179))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(help_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(exit_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel1)
+                        .addGap(97, 97, 97)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(combo_filter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
-                            .addComponent(combo_filter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
-                        .addComponent(query_btn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                            .addComponent(query_btn))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(resumenComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(presentarBtn))
+                        .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(help_btn)
                             .addComponent(exit_btn))
-                        .addGap(19, 19, 19)))
-                .addGap(47, 47, 47))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(46, Short.MAX_VALUE))))
         );
 
         pack();
@@ -146,30 +174,36 @@ public class Sys_GUI extends javax.swing.JFrame {
         frame.show(true);
         //dispose();
         //frame.UseManual();
-        
+
     }//GEN-LAST:event_help_btnActionPerformed
 
     private void query_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_query_btnActionPerformed
         // TODO add your handling code here:
         item_selected = combo_filter.getSelectedItem().toString();
-        
+
         ReadProcess process = new ReadProcess();
         process.Readprocess(item_selected);
         process.data.toString();
-        
+
         //System.out.println(process.data.toString());
-        
         output_txt.setText(process.data.toString());
-        
-        
-        
-        
     }//GEN-LAST:event_query_btnActionPerformed
 
     private void exit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_btnActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exit_btnActionPerformed
+
+    private void resumenComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumenComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resumenComboBoxActionPerformed
+
+    private void presentarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_presentarBtnActionPerformed
+        item_selected = resumenComboBox.getSelectedItem().toString();
+
+        ReadProcess process = new ReadProcess();
+        output_txt.setText(process.Resumenprocess(item_selected));
+    }//GEN-LAST:event_presentarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -211,9 +245,12 @@ public class Sys_GUI extends javax.swing.JFrame {
     private javax.swing.JButton exit_btn;
     private javax.swing.JButton help_btn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane output_txt;
+    private javax.swing.JButton presentarBtn;
     private javax.swing.JButton query_btn;
+    private javax.swing.JComboBox<String> resumenComboBox;
     // End of variables declaration//GEN-END:variables
 }
